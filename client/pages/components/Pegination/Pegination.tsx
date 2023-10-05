@@ -4,6 +4,7 @@ import { useSelector } from "react-redux";
 
 const Pegination = ({ itemsPerPage, setCurrentPage}: any) => {
   const { entities, loading } = useSelector((state: RootState) => state.user);
+ 
 
   const paginate = (pageNumber: React.SetStateAction<number>) => {
     setCurrentPage(pageNumber);

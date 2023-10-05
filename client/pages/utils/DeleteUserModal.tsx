@@ -2,6 +2,7 @@ import React from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { clearCurrentUserId } from "../slices/currentUserSlice";
 import { clearEditUserData } from "../slices/editUserSlice";
+import { CloseModal } from "./CloseModal";
 
 const DeleteUserModal = () => {
   const dispatch = useDispatch();
@@ -20,18 +21,18 @@ const DeleteUserModal = () => {
       id="id01"
     >
       <div className="">
-        <span onClick={closeModal} className="flex justify-end p-1 bg-blue-500">
+        <span onClick={closeModal} className="flex justify-center w-8 h-8 p-1 bg-blue-500 mb-2">
           &times;
         </span>
         <h2>Delete User?</h2>
-        <div className="flex justify-between">
+        <div className="flex justify-evenly mt-5">
           <form
             action={`http://localhost:8080/api/delete/${currentUserId}`}
             method="post"
           >
-            <button type="submit">Delete</button>
+            <button className="bg-blue-500 h-8" type="submit">Delete</button>
           </form>
-          <button onClick={closeModal}>Cancel</button>§
+          <button className="bg-blue-500 h-8" onClick={closeModal}>Cancel</button>
         </div>
       </div>
     </div>
